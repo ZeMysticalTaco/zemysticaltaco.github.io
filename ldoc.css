@@ -1,6 +1,6 @@
 
 :root {
-	--content-width: 1200px;
+	--content-width: 1500px;
 	--sidebar-width: 330px;
 
 	--padding-big: 48px;
@@ -17,8 +17,8 @@
 	--font-style-normal: Segoe UI, Helvetica, Arial, sans-serif;
 	--font-style-code: Consolas, monospace;
 
-	--color-accent: rgb(115, 53, 142);
-	--color-accent-dark: rgb(85, 39, 105);
+	--color-accent: rgb(142, 53, 53);
+	--color-accent-dark: rgb(105, 39, 39);
 	--color-white: rgb(255, 255, 255);
 	--color-offwhite: rgb(200, 200, 200);
 	--color-white-accent: rgb(203, 190, 209);
@@ -26,6 +26,10 @@
 	--color-lightgrey: rgb(160, 160, 160);
 	--color-background-light: rgb(240, 240, 240);
 	--color-background-dark: rgb(33, 33, 33);
+	--color-background-general: rgb(60,60,60);
+	--color-text-color: rgb(230,230,230);
+	--color-border-bottom: rgb(160,160,160);
+	--color-ref-link: rgb(197, 77, 77);
 }
 
 * {
@@ -35,7 +39,7 @@
 }
 
 body {
-	background-color: var(--color-background-light);
+	background-color: var(--color-background-general);
 	font-family: var(--font-style-normal);
 
 	display: flex;
@@ -86,7 +90,7 @@ details summary {
 }
 
 code {
-	font-family: "Source Code Pro", monospace;
+	font-family: "Consolas", monospace;
 	font-size: 85%;
 	white-space: pre;
 	tab-size: 4;
@@ -96,7 +100,7 @@ code {
 }
 
 pre {
-	background-color: rgb(33, 33, 33, 0.1);
+	background-color: rgb(33, 33, 33, 0.4);
 	margin-top: var(--padding-small);
 	padding: var(--padding-tiny);
 	overflow: auto;
@@ -220,6 +224,8 @@ nav section details.category {
 	padding-top: var(--padding-tiny);
 }
 
+
+
 nav section details.category > ul > li {
 	margin: 0;
 	line-height: 1.5;
@@ -228,6 +234,15 @@ nav section details.category > ul > li {
 nav section details.category > ul > li a {
 	display: inline-block;
 	width: 90%;
+}
+
+nav section details.category > ul > li a:hover {
+	display: inline-block;
+	width: 90%;
+	background-color: rgba(0, 136, 255, .4);
+	border-radius: 8px;
+	/* transform: translateX(-23); */
+	padding-left: 30px;
 }
 
 nav section details.category:first-of-type {
@@ -252,8 +267,8 @@ nav section details.category summary h2 {
 
 /* content */
 article {
-	background-color: rgb(255, 255, 255);
-
+	background-color: rgb(15, 15, 15);
+	color: var(--color-text-color);
 	width: calc(100% - var(--sidebar-width));
 	min-height: 100vh;
 	margin-left: var(--sidebar-width);
@@ -266,12 +281,12 @@ article .wrapper > *:first-child {
 /* header */
 article header {
 	color: rgb(255, 255, 255);
-	background-color: rgb(115, 53, 142);
+	background-color: rgb(142, 53, 53);
 	padding: var(--padding-tiny);
 }
 
 article header h1 {
-	border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+	border-bottom: 1px solid var(--color-border-bottom);
 	padding-bottom: 8px;
 	font-family: var(--font-style-code);
 	margin: 0;
@@ -300,7 +315,7 @@ details.category > summary::-webkit-details-marker {
 article h1 {
 	font-size: 28px;
 	font-weight: 600;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	border-bottom: 1px solid var(--color-border-bottom);
 	margin-top: 24px;
 	margin-bottom: 16px;
 	padding-bottom: 8px;
@@ -313,7 +328,7 @@ article h2 {
 }
 
 article h3 {
-	color: rgb(115, 53, 142);
+	color: rgb(142, 53, 53);
 	margin-top: var(--padding-tiny);
 	text-transform: uppercase;
 }
@@ -326,13 +341,13 @@ article p a,
 article ul li a,
 article h1 a,
 article h2 a {
-	color: rgb(115, 53, 142);
+	color: var(--color-ref-link);
 	font-weight: 600;
 }
 
 article h1.title {
 	color: rgb(255, 255, 255);
-	background-color: rgb(115, 53, 142);
+	background-color: rgb(142, 53, 53);
 	margin-top: var(--padding-small);
 	margin-bottom: 0;
 	padding: var(--padding-tiny);
@@ -344,12 +359,13 @@ article h1.title {
 }
 
 a.reference {
-	color: rgb(115, 53, 142);
+	color: rgb(179, 102, 102);
 	float: right;
 	margin-top: 8px;
 	padding-left: 8px;
 	font-size: 14px;
 	font-weight: 600;
+	text-shadow: 0px 1px black;
 }
 
 .notice {
@@ -391,13 +407,13 @@ a.reference {
 .method {
 	display: flex;
 	flex-flow: column;
-	background-color: rgb(230, 230, 230);
+	background-color: var(--color-background-general);
 	padding: var(--padding-tiny);
 	margin-top: var(--padding-small);
 }
 
 .method header {
-	color: rgb(0, 0, 0);
+	color: white;
 	background-color: inherit;
 	padding: 0;
 	order: -1;
@@ -409,14 +425,14 @@ a.reference {
 }
 
 .method header .anchor:target h1 {
-	background-color: rgba(115, 53, 142, 0.2);
+	background-color: rgba(142, 53, 53, 0.2);
 	background-clip: content-box;
 }
 
 .method header h1 {
 	font-family: "Source Code Pro", monospace;
 	padding-bottom: var(--padding-tiny);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	border-bottom: 1px solid var(--color-border-bottom);
 	font-size: 20px;
 }
 
@@ -425,10 +441,11 @@ a.reference {
 }
 
 .method h3 {
-	color: rgb(115, 53, 142);
+	color: rgb(236, 152, 152);
 	font-size: var(--font-normal);
 	letter-spacing: 2px;
 	text-transform: uppercase;
+	text-shadow: 0px 1px black;
 }
 
 .method pre {
@@ -468,7 +485,7 @@ a.reference {
 }
 
 .method ul li a {
-	color: rgb(115, 53, 142);
+	color: var(--color-ref-link);
 	font-weight: 600;
 }
 
@@ -483,7 +500,7 @@ a.reference {
 }
 
 .parameter {
-	background-color: rgb(115, 53, 142);
+	background-color: rgb(142, 53, 53);
 }
 
 .type {
@@ -504,7 +521,7 @@ a.type {
 }
 
 .or {
-	color: rgba(115, 53, 142, 0.5);
+	color: rgba(142, 53, 53, 0.5);
 	background-color: inherit;
 
 	width: calc(100% - 32px);
@@ -513,7 +530,7 @@ a.type {
 
 	text-align: center;
 	font-weight: 600;
-	border-bottom: 1px solid rgba(115, 53, 142, 0.5);
+	border-bottom: 1px solid rgba(142, 53, 53, 0.5);
 }
 
 .or span {

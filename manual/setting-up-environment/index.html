@@ -2,13 +2,14 @@
 
 <html>
 	<head>
-		<title>zulu - Helix Documentation</title>
+		<title>Setting up your Environment - Helix Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="zulu - Helix Documentation" />
+		<meta property="og:title" content="Setting up your Environment - Helix Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content="Helper library for reading&#47;writing files to the data folder." />
+			<meta property="og:description" content="
+Before you begin to work on your component, you&#39;re obviously going to need to know how to piece everything together, that&#39;s what this guide is for. Please note all code must follow the @{code-standards|Code Standards}. This is so that everyone can work t..." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -48,7 +49,7 @@ Set											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../libraries/zulu/">zulu</a></summary>
 
 									<ul>
@@ -219,87 +220,34 @@ ToggleWepRaised											</a>
 			<article>
 					<div class="wrapper">
 
-<header class="module">
-	<h1>zulu</h1>
-	<h2>Helper library for reading/writing files to the data folder.</h2>
-</header>
-
-<p>
-
-</p>
-
-	<h1 class="title">Functions</h1>
-
-		<section class="method">
-			<header>
-				<a class="anchor" id="Set">
-					<h1><span class="realm shared"></span></span>Set(key, value, bGlobal, bIgnoreMap)</h1>
-				</a>
+<h1>Setting up your Environment</h1>
+<p>Before you begin to work on your component, you're obviously going to need to know how to piece everything together, that's what this guide is for. Please note all code must follow the <a href="../../manual/code-standards/#">Code Standards</a>. This is so that everyone can work together easily, please adapt your standards for this project to these standards, alternatively, we have a preset glualint configuration that will format it automatically for you.</p>
 
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/sv_kill.lua#L17">View source &raquo;</a>
+<p>If you are unaware of the development standards, please go read them <a href="../../manual/development-standards/#">here</a>.
+<a name="NOTE__This_is_only_for_vscode_right_now_"></a></p>
+<h2>NOTE: This is only for vscode right now.</h2>
 
-					<p>Populates a file in the <code>data/helix</code> folder with some serialized data.</p>
-			</header>
+<h1>Server Content</h1>
+<p>You're going to need the server content.</p>
 
+<p><a name="Current_Content_"></a></p>
+<h2>Current Content:</h2>
 
-					<h3>Parameters</h3>
+<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2482186219">WG HL2RP PMs</a></p>
 
+<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=950845673">Parakeets Pill Pack</a></p>
 
-					<ul>
+<p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=417428923">Episodic Pill Pack</a></p>
 
-							<li>
-								<span class="tag parameter">key</span>
+<p><a href="https://github.com/TeamUlysses/ulx">ULX/ULib</a></p>
 
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+<p>Mount all of that content to your server and client, and you should be good to go on server content.</p>
 
+<h1>Installing Helix</h1>
+<p>If you have never installed Helix before <a href="https://docs.gethelix.co/manual/getting-started">Read This Guide Here</a>. You should not be relying on the Development Server to build, as that's for mass testing. Use your local copy.</p>
 
-								<p> Name of the file to save</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
-
-
-
-								<p> Some sort of data to save</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">bGlobal</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether or not to write directly to the <code>data/helix</code> folder, or the <code>data/helix/schema</code> folder,
- where <code>schema</code> is the name of the current schema.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">bIgnoreMap</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether or not to ignore the map and save in the schema folder, rather than
- <code>data/helix/schema/map</code>, where <code>map</code> is the name of the current map.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
+<p>If you are unable to install Helix for some reason, please contact Tom.</p>
 
 					</div>
 			</article>

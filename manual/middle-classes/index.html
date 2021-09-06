@@ -2,13 +2,15 @@
 
 <html>
 	<head>
-		<title>zulu - Helix Documentation</title>
+		<title>Middle Classes - Helix Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="zulu - Helix Documentation" />
+		<meta property="og:title" content="Middle Classes - Helix Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content="Helper library for reading&#47;writing files to the data folder." />
+			<meta property="og:description" content="
+
+Helix comes with the `middleclass` library, for objects that need to be instanced, we recommend using this library, Lua isn&#39;t really a good &quot;Object Oriented&quot; language, with the closest thing we have being MetaTables. The Middleclass library makes creati..." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -48,7 +50,7 @@ Set											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../libraries/zulu/">zulu</a></summary>
 
 									<ul>
@@ -219,87 +221,44 @@ ToggleWepRaised											</a>
 			<article>
 					<div class="wrapper">
 
-<header class="module">
-	<h1>zulu</h1>
-	<h2>Helper library for reading/writing files to the data folder.</h2>
-</header>
+<h1>Middle Classes</h1>
 
-<p>
+<p>Helix comes with the <code>middleclass</code> library, for objects that need to be instanced, we recommend using this library, Lua isn't really a good "Object Oriented" language, with the closest thing we have being MetaTables. The Middleclass library makes creating objects and instances of objects easy, and has inheritance.</p>
 
-</p>
+<p>Declaring an object is as easy as:</p>
 
-	<h1 class="title">Functions</h1>
+<pre><code> local objectMeta = ix.meta.objectMeta or ix.middleclass( 'objectMeta' )
+ AccessorFunc( objectMeta, 'foo', 'AccessorFuncDemonstration' ) --You can even use AccessorFunc on middleclass objects.
 
-		<section class="method">
-			<header>
-				<a class="anchor" id="Set">
-					<h1><span class="realm shared"></span></span>Set(key, value, bGlobal, bIgnoreMap)</h1>
-				</a>
+ -- Constructor function, this is called whenever a new object is initialized with meta:New(...)
+ function objectMeta:Initialize( argumentone, argument_two, etc )
+     self.foo = 'bar'
+     self.uno = argumentone
+ end
 
+ --Meta Function
+ function objectMeta:ReportStatus( )
+     return 'I am a pretty object!'
+ end
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/sv_kill.lua#L17">View source &raquo;</a>
+ -- Return a field.
+ function objectMeta:GetSuperArgument( )
+     return self.uno
+ end
 
-					<p>Populates a file in the <code>data/helix</code> folder with some serialized data.</p>
-			</header>
-
-
-					<h3>Parameters</h3>
-
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">key</span>
-
-									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
-
-
-								<p> Name of the file to save</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">value</span>
+ -- Initializer.
+ local object = objectMeta:New( 'This is an argument to the constructor!' )
+ local msg = [[
+         I am an object, whenever I am printed, I identify as: %s
+         I am an instance of [object], with my own thoughts and feelings. I identify as: %s
+         I am the status of [instance of object], here's what I have to say: %s
+         I am the SuperArgument of [instance of object], here's what I am: %s
+         And finally, the news.
+     ]]
+ MsgC( Format( msg, objectMeta, object, object:ReportStatus( ), object:GetSuperArgument( ), object:GetAccessorFuncDemonstration( ) ) )
+</code></pre>
 
 
-
-								<p> Some sort of data to save</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">bGlobal</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether or not to write directly to the <code>data/helix</code> folder, or the <code>data/helix/schema</code> folder,
- where <code>schema</code> is the name of the current schema.</p>
-							</li>
-					</ul>
-
-					<ul>
-
-							<li>
-								<span class="tag parameter">bIgnoreMap</span>
-
-									<span class="tag"><span class="type">boolean</span></span>
-
-									<span class="tag default">default: false</span>
-
-								<p> Whether or not to ignore the map and save in the schema folder, rather than
- <code>data/helix/schema/map</code>, where <code>map</code> is the name of the current map.</p>
-							</li>
-					</ul>
-
-
-
-		</section>
 
 					</div>
 			</article>
