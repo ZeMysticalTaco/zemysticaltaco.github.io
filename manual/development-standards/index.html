@@ -237,11 +237,29 @@ ToggleWepRaised											</a>
 
 <p>See: {@middle-classes|Middle Classes}</p>
 
+<p><a name="Panel_Objects"></a></p>
+<h2>Panel Objects</h2>
+<p>Panels should be Panel CLASSES, the only reason you should offshoot or dynamically extend (that is, to alter static variables or functions of the panel at runtime) and not extend by class, is if it's one line or very simplistic. Don't call <code>DEFINE_BASECLASS</code> and do a <code>BaseClass</code> function when not working with a Panel object, it looks ugly.</p>
+
+<p>Non-purpose built panels (ie. buttons) should be able to function individually(i can open a dpanel and do panel:Add(class)) unless they have functionality that needs to be directly tied to the panel.</p>
 <h1>The Stack</h1>
 <p>Avoid unnecessary scope pyramids, if you're 6 scopes deep and all you're doing is Derma Panels, you're are most likely doing it wrong.</p>
 
+<p><a name="Conditionals"></a></p>
+<h2>Conditionals</h2>
+<p>Conditionals should catch all circumstances they possibly can, things shouldn't ever be left to chance. Conditionals should be <code>positive bias</code>, meaning that most if statements should follow an <code>if (x) then</code> philosophy and not a <code>if not (x) then</code> philosophy, though this is difficult to follow, and isn't required.</p>
+
+<p><a name="Pyramids"></a></p>
+<h2>Pyramids</h2>
+<p>Scoping is difficult, deciding where things should go for the best possible recognition is difficult. Scope pyramids should be limited to 5 scopes deep or less.</p>
+
+<h3>Function Pyramids</h3>
+<p>Functions should not be declared in functions. Excepting <code>local function</code>s.</p>
+
 <h1>Prototyping</h1>
 <p>Until code is committed to master, it's considered prototype code, and is not production ready.</p>
+
+
 
 					</div>
 			</article>
