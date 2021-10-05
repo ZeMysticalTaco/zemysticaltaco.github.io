@@ -110,6 +110,9 @@ pre code {
 	background-color: transparent;
 } */
 
+
+
+
 span.realm {
 	width: 14px;
 	height: 14px;
@@ -378,6 +381,19 @@ a.reference {
 
 .notice.error {
 	--color-notice-background: rgb(194, 52, 130);
+	font-size: large;
+}
+
+.notice.unimplemented {
+	--color-notice-background: rgb(194, 192, 52);
+}
+
+.unimplemented.text p {
+	font-size: large;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-shadow: 0px 1px black;
+	color: white;
 }
 
 .notice.warning {
@@ -394,6 +410,20 @@ a.reference {
 
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	
+}
+
+.notice .alternatetitle {
+	color: var(--color-white);
+	background-color: var(--color-notice-background);
+	padding: var(--padding-tiny);
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	text-align: center;
+	text-decoration-style: underline overline;
+	text-decoration-skip: 32px;
+	text-shadow: 0px 1px black;
 }
 
 .notice p {

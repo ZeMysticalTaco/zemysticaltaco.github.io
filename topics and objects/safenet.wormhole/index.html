@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>ix.testLibrary - Helix Documentation</title>
+		<title>SafeNet.Wormhole - Helix Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="ix.testLibrary - Helix Documentation" />
+		<meta property="og:title" content="SafeNet.Wormhole - Helix Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content="Helper library for reading&#47;writing files to the data folder." />
+			<meta property="og:description" content="A simple two way portal &#47; door to network messages." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -54,7 +54,7 @@ RegisterNetworkString											</a>
 									</details>
 							</li>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../libraries/ix.testlibrary/">ix.testLibrary</a></summary>
 
 									<ul>
@@ -94,7 +94,7 @@ Set											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../topics and objects/safenet.wormhole/">SafeNet.Wormhole</a></summary>
 
 									<ul>
@@ -302,27 +302,34 @@ SetValidatorKey											</a>
 					<div class="wrapper">
 
 <header class="module">
-	<h1>ix.testLibrary</h1>
-	<h2>Helper library for reading/writing files to the data folder.</h2>
+	<h1>SafeNet.Wormhole</h1>
+	<h2>A simple two way portal / door to network messages.</h2>
 </header>
 
-<p>
+<p>Wormholes are very simple, the main purpose of Wormholes is to block any network messages from the Client that you don't want.</p>
 
-</p>
+<p>Simply call <a href="../../topics and objects/safenet.wormhole/#SafeNet.RegisterWormhole">RegisterWormhole</a> using a name.</p>
 
 	<h1 class="title">Functions</h1>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="ix.testLibrary.Set">
-					<h1><span class="realm shared"></span></span>ix.testLibrary.Set(key, value, bGlobal, bIgnoreMap)</h1>
+				<a class="anchor" id="SafeNet.CloseWormhole">
+					<h1><span class="realm server"></span></span>SafeNet.CloseWormhole(self, wormholeName, client)</h1>
 				</a>
 
 
+				<div class="notice unimplemented">
+					<div class="alternatetitle">Unimplemented</div>
+					<div class="unimplemented text">
+					<p>This method or function is UNIMPLEMENTED!</p>
+					<p>This means it does not yet have functionality, but exists in code!</p>
+				</div>
+				</div>
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/schema/sv_test_file.lua#L15">View source &raquo;</a>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L164">View source &raquo;</a>
 
-					<p>Populates a file in the <code>data/helix</code> folder with some serialized data.</p>
+					<p>Closes a <a href="../../topics and objects/safenet.wormhole/#">SafeNet.Wormhole</a> to the Client.</p>
 			</header>
 
 
@@ -332,54 +339,272 @@ SetValidatorKey											</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter">key</span>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><a class="type" href="../../classes/safenet.object/#">SafeNet.Object</a></span>
+
+
+								<p> The <a href="../../classes/safenet.object/#">SafeNet.Object</a> you are modifying. This parameter is auto filled if you are using this as a method.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">wormholeName</span>
 
 									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
 
-								<p> Name of the file to save</p>
+								<p> The name of the SafeNet.Wormhole you are closing.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">value</span>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
 
 
+								<p> The player you are closing the SafeNet.Wormhole for.</p>
+							</li>
+					</ul>
 
-								<p> Some sort of data to save</p>
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The current WORMHOLE_STATE of the SafeNet.Wormhole for this client..</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="SafeNet.GetWormholeState">
+					<h1><span class="realm server"></span></span>SafeNet.GetWormholeState(self, wormholeName, client)</h1>
+				</a>
+
+
+				<div class="notice unimplemented">
+					<div class="alternatetitle">Unimplemented</div>
+					<div class="unimplemented text">
+					<p>This method or function is UNIMPLEMENTED!</p>
+					<p>This means it does not yet have functionality, but exists in code!</p>
+				</div>
+				</div>
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L173">View source &raquo;</a>
+
+					<p>Returns a <a href="../../classes/player/#">Player</a>'s SafeNet.Wormhole State.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><a class="type" href="../../classes/safenet.object/#">SafeNet.Object</a></span>
+
+
+								<p> The <a href="../../classes/safenet.object/#">SafeNet.Object</a> you are modifying. This parameter is auto filled if you are using this as a method.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">bGlobal</span>
+								<span class="tag parameter">wormholeName</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
 
-									<span class="tag default">default: false</span>
 
-								<p> Whether or not to write directly to the <code>data/helix</code> folder, or the <code>data/helix/schema</code> folder,
- where <code>schema</code> is the name of the current schema.</p>
+								<p> The name of the SafeNet.Wormhole you are closing.</p>
 							</li>
 					</ul>
 
 					<ul>
 
 							<li>
-								<span class="tag parameter">bIgnoreMap</span>
+								<span class="tag parameter">client</span>
 
-									<span class="tag"><span class="type">boolean</span></span>
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
 
-									<span class="tag default">default: false</span>
 
-								<p> Whether or not to ignore the map and save in the schema folder, rather than
- <code>data/helix/schema/map</code>, where <code>map</code> is the name of the current map.</p>
+								<p> The player you are closing the SafeNet.Wormhole for.</p>
 							</li>
 					</ul>
 
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The current WORMHOLE_STATE of the SafeNet.Wormhole for this client.</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="SafeNet.OpenWormhole">
+					<h1><span class="realm server"></span></span>SafeNet.OpenWormhole(self, wormholeName, client)</h1>
+				</a>
+
+
+				<div class="notice unimplemented">
+					<div class="alternatetitle">Unimplemented</div>
+					<div class="unimplemented text">
+					<p>This method or function is UNIMPLEMENTED!</p>
+					<p>This means it does not yet have functionality, but exists in code!</p>
+				</div>
+				</div>
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L154">View source &raquo;</a>
+
+					<p>Opens a <a href="../../topics and objects/safenet.wormhole/#">SafeNet.Wormhole</a> to the Client.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><a class="type" href="../../classes/safenet.object/#">SafeNet.Object</a></span>
+
+
+								<p> The <a href="../../classes/safenet.object/#">SafeNet.Object</a> you are modifying. This parameter is auto filled if you are using this as a method.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">wormholeName</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The name of the SafeNet.Wormhole you are opening.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The player you are opening the SafeNet.Wormhole for.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">number</span>
+
+								<p>The current WORMHOLE_STATE of the SafeNet.Wormhole of this client..</p>
+							</li>
+
+				</ul>
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="SafeNet.RegisterWormhole">
+					<h1><span class="realm server"></span></span>SafeNet.RegisterWormhole(self, wormholeName, wormholeValidator)</h1>
+				</a>
+
+
+				<div class="notice unimplemented">
+					<div class="alternatetitle">Unimplemented</div>
+					<div class="unimplemented text">
+					<p>This method or function is UNIMPLEMENTED!</p>
+					<p>This means it does not yet have functionality, but exists in code!</p>
+				</div>
+				</div>
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L144">View source &raquo;</a>
+
+					<p>Registers a SafeNet.Wormhole for a Network string.</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">self</span>
+
+									<span class="tag"><a class="type" href="../../classes/safenet.object/#">SafeNet.Object</a></span>
+
+
+								<p> The <a href="../../classes/safenet.object/#">SafeNet.Object</a> you are modifying. This parameter is auto filled if you are using this as a method.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">wormholeName</span>
+
+									<span class="tag"><a class="type" href="https://www.lua.org/manual/5.2/manual.html#6.4">string</a></span>
+
+
+								<p> The name of the SafeNet.Wormhole you are opening.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">wormholeValidator</span>
+
+									<span class="tag"><span class="type">function</span></span>
+
+
+								<p> The validator for this <a href="../../topics and objects/safenet.wormhole/#">SafeNet.Wormhole</a>.</p>
+							</li>
+					</ul>
+
+
+				<h3>Returns</h3>
+				<ul>
+
+							<li>
+									<span class="type">bool</span>
+
+								<p>Whether or not the SafeNet.Wormhole was registered.</p>
+							</li>
+
+				</ul>
 
 
 		</section>
