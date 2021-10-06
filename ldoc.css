@@ -388,6 +388,10 @@ a.reference {
 	--color-notice-background: rgb(194, 192, 52);
 }
 
+.notice.rough {
+	--color-notice-background:rgb(52, 61, 194);
+}
+
 .unimplemented.text p {
 	font-size: large;
 	font-weight: bold;
@@ -424,6 +428,19 @@ a.reference {
 	text-decoration-style: underline overline;
 	text-decoration-skip: 32px;
 	text-shadow: 0px 1px black;
+}
+
+
+
+
+
+.notice .roughText {
+	--color-notice-background: red;
+	font-size: large;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-shadow: 0px 1px black;
+	color: white;
 }
 
 .notice p {

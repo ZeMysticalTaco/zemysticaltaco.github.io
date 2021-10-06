@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Starting Off - Helix Documentation</title>
+		<title>SafeNet.ERRLEV - Helix Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Starting Off - Helix Documentation" />
+		<meta property="og:title" content="SafeNet.ERRLEV - Helix Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content=" ..." />
+			<meta property="og:description" content="The SafeNet.ERRLEV Enumeration is used to quickly identify SafeNet Error Levels." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -99,7 +99,7 @@ Set											</a>
 
 					<ul>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../topics and objects/safenet.errlev/">SafeNet.ERRLEV</a></summary>
 
 									<ul>
@@ -332,7 +332,42 @@ SetValidatorKey											</a>
 			<article>
 					<div class="wrapper">
 
-<h1>Starting Off</h1>
+<header class="module">
+	<h1>SafeNet.ERRLEV</h1>
+	<h2>The SafeNet.ERRLEV Enumeration is used to quickly identify SafeNet Error Levels.</h2>
+</header>
+
+<p>Each Error Level inherits the behavior of the previous ones, so <code>SafeNet.ERRLEV.BREAK</code> will also do <code>SafeNet.ERRLEV.NOTIFY</code>'s
+stuff.</p>
+
+<h1>Error Level: 0</h1>
+
+<h2>SafeNet.ERRLEV.NONE</h2>
+
+<p>SafeNet will do nothing if this message errors or is rejected.</p>
+
+<h1>Error Level: 1</h1>
+
+<h2>SafeNet.ERRLEV.NOTIFY</h2>
+
+<p>SafeNet will notify admins, and put a message in the log if this message errors or is rejected.</p>
+
+<h1>Error Level: 2</h1>
+
+<h2>SafeNet.ERRLEV.BREAK</h2>
+
+<p>SafeNet will break the <em><strong>whole</strong></em> stack, and halt operation. The difference between this, and normal operation, is that
+SafeNet will not error messages, but merely log it and return it, this will not break the stack, so if there is a statement afterwards,
+it may work still, provided it didn't neec correct parameters.</p>
+
+<p>They are separated because not stopping exploits makes them way easier to find.</p>
+
+<h1>Error Level: 3</h1>
+
+<h2>SafeNet.ERRLEV.LOCK</h2>
+
+<p>SafeNet will LOCK the Network Message from being run by the client again, until an Admin removes that lock.</p>
+
 
 					</div>
 			</article>
