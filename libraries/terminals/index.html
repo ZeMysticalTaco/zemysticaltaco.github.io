@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>SafeNet.ERRLEV - WG Documentation</title>
+		<title>Terminals - WG Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="SafeNet.ERRLEV - WG Documentation" />
+		<meta property="og:title" content="Terminals - WG Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content="The SafeNet.ERRLEV Enumeration is used to quickly identify SafeNet Error Levels." />
+			<meta property="og:description" content="Provides a way for characters to interact with the world using a singlular terminal." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -59,7 +59,7 @@ RegisterNetworkString											</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../libraries/terminals/">Terminals</a></summary>
 
 									<ul>
@@ -120,7 +120,7 @@ Set											</a>
 
 					<ul>
 							<li>
-									<details open>
+									<details >
 									<summary><a href="../../topics and objects/safenet.errlev/">SafeNet.ERRLEV</a></summary>
 
 									<ul>
@@ -354,41 +354,140 @@ SetValidatorKey											</a>
 					<div class="wrapper">
 
 <header class="module">
-	<h1>SafeNet.ERRLEV</h1>
-	<h2>The SafeNet.ERRLEV Enumeration is used to quickly identify SafeNet Error Levels.</h2>
+	<h1>Terminals</h1>
+	<h2>Provides a way for characters to interact with the world using a singlular terminal.</h2>
 </header>
 
-<p>Each Error Level inherits the behavior of the previous ones, so <code>SafeNet.ERRLEV.BREAK</code> will also do <code>SafeNet.ERRLEV.NOTIFY</code>'s
-stuff.</p>
+<p>
 
-<h1>Error Level: 0</h1>
+<p>The Terminal Systemw was designed to allow players to immersively conduct operations in game.</p>
 
-<h2>SafeNet.ERRLEV.NONE</h2>
+<h2>The Shop</h2>
 
-<p>SafeNet will do nothing if this message errors or is rejected.</p>
 
-<h1>Error Level: 1</h1>
+<h2>Citizen Management</h2>
 
-<h2>SafeNet.ERRLEV.NOTIFY</h2>
+<h2>Housing Management</h2>
 
-<p>SafeNet will notify admins, and put a message in the log if this message errors or is rejected.</p>
 
-<h1>Error Level: 2</h1>
+</p>
 
-<h2>SafeNet.ERRLEV.BREAK</h2>
+	<h1 class="title">Functions</h1>
 
-<p>SafeNet will break the <em><strong>whole</strong></em> stack, and halt operation. The difference between this, and normal operation, is that
-SafeNet will not error messages, but merely log it and return it, this will not break the stack, so if there is a statement afterwards,
-it may work still, provided it didn't neec correct parameters.</p>
+		<section class="method">
+			<header>
+				<a class="anchor" id="ind">
+					<h1><span class="realm shared"></span></span>ind(client, ent)</h1>
+				</a>
 
-<p>They are separated because not stopping exploits makes them way easier to find.</p>
 
-<h1>Error Level: 3</h1>
 
-<h2>SafeNet.ERRLEV.LOCK</h2>
+				<div class="notice rough">
+					<div class="alternatetitle">
+						Rough Documentation
+					</div>
+					<div class="unimplemented text">
+						<p>
+							This method, function or library is <u>ROUGHLY DOCUMENTED!</u>
+						</p>
+						<p>
+							This means that the documentation could potentially be incorrect.
+						</p>
+					</div>
+				</div>
 
-<p>SafeNet will LOCK the Network Message from being run by the client again, until an Admin removes that lock.</p>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sh_plugin.lua#L59">View source &raquo;</a>
 
+					<p>Controls whether or not players can use the terminal</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The Player trying o use the Terminal.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ent</span>
+
+
+
+								<p> The Terminal they are trying to use.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="zim">
+					<h1><span class="realm shared"></span></span>zim(client, ent)</h1>
+				</a>
+
+
+
+				<div class="notice rough">
+					<div class="alternatetitle">
+						Rough Documentation
+					</div>
+					<div class="unimplemented text">
+						<p>
+							This method, function or library is <u>ROUGHLY DOCUMENTED!</u>
+						</p>
+						<p>
+							This means that the documentation could potentially be incorrect.
+						</p>
+					</div>
+				</div>
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sh_plugin.lua#L50">View source &raquo;</a>
+
+					<p>Controls whether or not players can use the terminal</p>
+			</header>
+
+
+					<h3>Parameters</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">client</span>
+
+									<span class="tag"><a class="type" href="../../classes/player/#">Player</a></span>
+
+
+								<p> The Player trying o use the Terminal.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter">ent</span>
+
+
+
+								<p> The Terminal they are trying to use.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>
