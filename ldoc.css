@@ -30,6 +30,8 @@
 	--color-text-color: rgb(230,230,230);
 	--color-border-bottom: rgb(160,160,160);
 	--color-ref-link: rgb(197, 77, 77);
+
+	--displayKind-alpha: .4;
 }
 
 * {
@@ -64,7 +66,7 @@ ul li {
 	background-color: var(--color-accent);
 	color: var(--color-white);
 
-	padding: 128px 0 128px 0;
+	padding: var(--padding-small);
 }
 
 .landing h1 {
@@ -89,7 +91,7 @@ details summary {
 	outline: none;
 }
 
-/* code {
+ code {
 	font-family: "Consolas", monospace;
 	font-size: 85%;
 	white-space: pre;
@@ -108,30 +110,12 @@ pre {
 
 pre code {
 	background-color: transparent;
-} */
-
-
-
-
-span.realm {
-	width: 14px;
-	height: 14px;
-	border-radius: 3px;
-	display: inline-block;
-	margin-right: 6px;
 }
 
-span.realm.shared {
-	background: linear-gradient(45deg, #f80 0%, #f80 50%, #08f 51%, #08f 100%);
-}
 
-span.realm.client {
-	background-color: #f80;
-}
 
-span.realm.server {
-	background-color: #08f;
-}
+
+
 
 /* wrapper element for sidebar/content */
 main {
@@ -154,6 +138,7 @@ nav {
 	flex-direction: column;
 
 	width: var(--sidebar-width);
+	padding-right: 16px;
 	height: 100%;
 }
 
@@ -231,21 +216,20 @@ nav section details.category {
 
 nav section details.category > ul > li {
 	margin: 0;
-	line-height: 1.5;
+	line-height: 2;
 }
 
 nav section details.category > ul > li a {
-	display: inline-block;
 	width: 90%;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 nav section details.category > ul > li a:hover {
-	display: inline-block;
 	width: 90%;
 	background-color: rgba(0, 136, 255, .4);
 	border-radius: 8px;
-	/* transform: translateX(-23); */
-	padding-left: 30px;
+	padding-left: 16px;
 }
 
 nav section details.category:first-of-type {
@@ -266,6 +250,46 @@ nav section details.category summary h2 {
 	cursor: pointer;
 
 	padding-bottom: var(--padding-tiny);
+}
+
+
+span.displayKind {
+	background: linear-gradient(45deg, #f80 0%, #f80 50%, #08f 51%, #08f 100%);
+	color:rgb(0, 136, 255);
+	opacity: .2;
+	font-size: small;
+	font-style: italic;
+	text-align: right;
+}
+span.displayKind.functions {
+	color:rgb(255, 0, 106);
+}
+span.displayKind.tables {
+	color:rgb(0, 136, 255);
+}
+
+span.realm {
+	width: 14px;
+	height: 14px;
+	border-radius: 3px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 6px;
+	margin-right: 6px;
+	box-shadow: black 1px 1px;
+	
+}
+
+span.realm.shared {
+	background: linear-gradient(45deg, #f80 0%, #f80 50%, #08f 51%, #08f 100%);
+}
+
+span.realm.client {
+	background-color: #f80;
+}
+
+span.realm.server {
+	background-color: #08f;
 }
 
 /* content */
