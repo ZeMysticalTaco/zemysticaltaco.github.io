@@ -514,11 +514,18 @@ a.reference {
 	color:whitesmoke;
 	font-size: 12px;
 	padding: 8px;
+	opacity: .8;
+
 }
 
 .notice .alternatetitle.displayType.nwstrings {
 	background-color: var(--displayKind-nwstrings-color);
-	opacity: .8;
+}
+.notice .alternatetitle.displayType.tables {
+	background-color: var(--displayKind-tables-color);
+}
+.notice .alternatetitle.displayType.functions {
+	background-color: var(--displayKind-functions-color);
 }
 
 .notice .roughText {
