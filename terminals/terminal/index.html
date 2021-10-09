@@ -2,13 +2,13 @@
 
 <html>
 	<head>
-		<title>Code Standards - WG Documentation</title>
+		<title>Terminal - WG Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Code Standards - WG Documentation" />
+		<meta property="og:title" content="Terminal - WG Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content=" ..." />
+			<meta property="og:description" content="Provides a way for characters to interact with the world using a singlular terminal." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -118,7 +118,7 @@ Two												</a>
 									</details>
 							</li>
 							<li>
-									<details >
+									<details open>
 									<summary><a href="../../terminals/terminal/">Terminal</a></summary>
 
 									<ul>
@@ -457,7 +457,269 @@ SetValidatorKey												</a>
 			<article>
 					<div class="wrapper">
 
-<h1>Code Standards</h1>
+<header class="module">
+	<h1>Terminal</h1>
+	<h2>Provides a way for characters to interact with the world using a singlular terminal.</h2>
+</header>
+
+<p>
+
+<p>The Terminal Systemw was designed to allow players to immersively conduct operations in game.</p>
+
+<h2>The Shop</h2>
+
+
+<h2>Citizen Management</h2>
+
+<h2>Housing Management</h2>
+
+
+</p>
+
+	<h1 class="title">Tables</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="TWOdsfsdfsd">
+					<h1 class="displayType tables"><span class="realm shared"></span></span>TWOdsfsdfsd
+						<div class="notice displayType tables">
+							<div class="alternatetitle displayType tables">
+								Table / Enumeration
+							</div>
+							<div class="unimplemented text displayType tables">
+									<!-- You can put text here. -->
+
+							</div>
+						</div>
+					</h1>
+				</a>
+
+
+
+
+
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sh_plugin.lua#L72">View source &raquo;</a>
+
+					<p>Sx</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>NONE</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p> SafeNet will do nothing if this message errors or is rejected.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>NOTIFY</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p> SafeNet will notify admins, and put a message in the log if this message errors or is rejected.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>BREAK</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>SafeNet will break the <em><strong>whole</strong></em> stack, and halt operation. The difference between this, and normal operation, is that
+SafeNet will not error messages, but merely log it and return it, this will not break the stack, so if there is a statement afterwards,
+it may work still, provided it didn't neec correct parameters.</p>
+
+<p>They are separated because not stopping exploits makes them way easier to find.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>LOCK</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p> SafeNet will LOCK the Network Message from being run by the client again, until an Admin removes that lock.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="XAD">
+					<h1 class="displayType tables"><span class="realm shared"></span></span>XAD
+						<div class="notice displayType tables">
+							<div class="alternatetitle displayType tables">
+								Table / Enumeration
+							</div>
+							<div class="unimplemented text displayType tables">
+									<!-- You can put text here. -->
+
+							</div>
+						</div>
+					</h1>
+				</a>
+
+
+
+
+
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sh_plugin.lua#L59">View source &raquo;</a>
+
+					<p>Sx</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>NONE</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p> SafeNet will do nothing if this message errors or is rejected.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>NOTIFY</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p> SafeNet will notify admins, and put a message in the log if this message errors or is rejected.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>BREAK</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>SafeNet will break the <em><strong>whole</strong></em> stack, and halt operation. The difference between this, and normal operation, is that
+SafeNet will not error messages, but merely log it and return it, this will not break the stack, so if there is a statement afterwards,
+it may work still, provided it didn't neec correct parameters.</p>
+
+<p>They are separated because not stopping exploits makes them way easier to find.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>LOCK</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p> SafeNet will LOCK the Network Message from being run by the client again, until an Admin removes that lock.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
 
 					</div>
 			</article>

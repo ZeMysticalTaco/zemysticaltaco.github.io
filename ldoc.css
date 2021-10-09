@@ -31,7 +31,17 @@
 	--color-border-bottom: rgb(160,160,160);
 	--color-ref-link: rgb(197, 77, 77);
 
-	--displayKind-alpha: .4;
+	--displayKind-alpha: .7;
+	
+	--displayKind-default-color: rgb(0, 136, 255);
+
+	--displayKind-functions-color: rgb(255, 0, 106);
+	
+	--displayKind-tables-color: rgb(0, 136, 255);
+
+	--displayKind-nwstrings-color: rgb(0, 209, 17);
+	
+	--displayKind-text-padding: 6px;
 }
 
 * {
@@ -59,6 +69,8 @@ h1, h2, h3, h4 {
 
 ul li {
 	margin-left: var(--padding-small);
+	padding-bottom: 16px;
+
 }
 
 /* landing */
@@ -223,13 +235,16 @@ nav section details.category > ul > li a {
 	width: 90%;
 	display: inline-block;
 	white-space: nowrap;
+	transition: 0.1s;
 }
+
 
 nav section details.category > ul > li a:hover {
 	width: 90%;
 	background-color: rgba(0, 136, 255, .4);
 	border-radius: 8px;
 	padding-left: 16px;
+	transition: 0.1s;
 }
 
 nav section details.category:first-of-type {
@@ -253,19 +268,43 @@ nav section details.category summary h2 {
 }
 
 
-span.displayKind {
-	background: linear-gradient(45deg, #f80 0%, #f80 50%, #08f 51%, #08f 100%);
+/* span.displayKind {
+	//background: linear-gradient(45deg, #f80 0%, #f80 50%, #08f 51%, #08f 100%);
 	color:rgb(0, 136, 255);
-	opacity: .2;
+	opacity: .7;
 	font-size: small;
 	font-style: italic;
 	text-align: right;
+	background-color: aquamarine;
+} */
+
+span.displayKind {
+	/* background: linear-gradient(45deg, #f80 0%, #f80 50%, #08f 51%, #08f 100%); */
+	color: var(--displayKind-default-color);
+	opacity: var(--displayKind-alpha);
+	font-size: 12px;
+	font-style: italic;
+	text-align: left;
+	background-color: rgba(0,0,0,.4);
+	display: inline-block;
+	width: auto;
+	padding-right: var(--displayKind-text-padding);
+	margin-left: 4px;
+	text-indent: var(--displayKind-text-padding);
+	border-style: solid;
+	border-width: 1px;
+	box-shadow: black 2px 2px;
 }
+
 span.displayKind.functions {
-	color:rgb(255, 0, 106);
+	color:var(--displayKind-functions-color);
 }
 span.displayKind.tables {
-	color:rgb(0, 136, 255);
+	color:var(--displayKind-tables-color);
+}
+
+span.displayKind.nwstrings {
+	color:var(--displayKind-nwstrings-color);
 }
 
 span.realm {
@@ -424,6 +463,13 @@ a.reference {
 	color: white;
 }
 
+.unimplemented.text.displayType p {
+	font-size: 10px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
 .notice.warning {
 	--color-notice-background: rgb(224, 169, 112);
 	--color-notice-text: rgb(167, 104, 37);
@@ -454,9 +500,26 @@ a.reference {
 	text-shadow: 0px 1px black;
 }
 
+.notice.displayType {
+	--color-notice-background: rgb(203, 224, 112);
+	--color-notice-text: rgb(167, 104, 37);
+	background-color: rgb(40,40,40);
+	border: 0;
+	margin-left: auto;
+	margin-right: 32px;
+}
 
+.notice .alternatetitle.displayType {
+	background-color: var(--displayKind-default-color);
+	color:whitesmoke;
+	font-size: 12px;
+	padding: 8px;
+}
 
-
+.notice .alternatetitle.displayType.nwstrings {
+	background-color: var(--displayKind-nwstrings-color);
+	opacity: .8;
+}
 
 .notice .roughText {
 	--color-notice-background: red;
@@ -506,6 +569,12 @@ a.reference {
 	border-bottom: 1px solid var(--color-border-bottom);
 	font-size: 20px;
 }
+
+.method header h1.displayType {
+	border-bottom: none;
+	display:flex;
+}
+
 
 .method header p:first-of-type {
 	margin-top: var(--padding-tiny);
@@ -564,8 +633,10 @@ a.reference {
 .parameter, .type, .default {
 	display: inline-block;
 	color: rgb(255, 255, 255) !important;
-
-	padding: 4px;
+  	margin-right: 16px; 
+	padding: 6px;
+	padding-right: 36px;
+	padding-left: 12px;
 	font-size: 14px;
 	font-family: "Source Code Pro", monospace;
 }
@@ -577,6 +648,12 @@ a.reference {
 .type {
 	background-color: rgb(31, 141, 155);
 }
+
+.typeHeader {
+	font-size: 8px;
+	display: table-caption;
+	font-style: italic;
+	}
 
 a.type {
 	font-weight: 300 !important;
