@@ -340,6 +340,14 @@ article {
 	margin-left: var(--sidebar-width);
 }
 
+article .wrapper img {
+	text-align: center;
+	justify-content: center;
+	border-bottom: beige;
+	border-bottom-style: groove;
+	border-bottom-color: green;
+	}
+
 article .wrapper > *:first-child {
 	margin-top: 0;
 }
@@ -635,6 +643,8 @@ a.reference {
 	color: var(--color-ref-link);
 	font-weight: 600;
 }
+
+
 
 /* we have to manually specify these instead of making a shared class since you cannot customize the parameter class in ldoc */
 .parameter, .type, .default {
