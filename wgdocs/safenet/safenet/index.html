@@ -8,7 +8,7 @@
 		<meta property="og:title" content="SafeNet - WG Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content="SafeNet is a utility designed to secure Network Messaages and ensure data integrity." />
+			<meta property="og:description" content="The main namespace for SafeNet." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -59,6 +59,17 @@ PlayerCanUseTerminal												</a>
 
 					<ul>
 							<li>
+									<details >
+									<summary><a href="../../safenet/1_overview/">1_Overview</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
+							<li>
 									<details open>
 									<summary><a href="../../safenet/safenet/">SafeNet</a></summary>
 
@@ -87,6 +98,42 @@ RegisterNetworkString												</a>
 									</ul>
 									</details>
 							</li>
+							<li>
+									<details >
+									<summary><a href="../../safenet/safenet.errlev/">SafeNet.ERRLEV</a></summary>
+
+									<ul>
+
+
+										<li>
+										<a href="../../safenet/safenet.errlev/#SafeNet.ERRLEV">
+										<span class="realm shared"></span>
+SafeNet.ERRLEV												</a>
+											<p><span class="displayKind tables">Table</span></p>
+										</li>
+
+									</ul>
+									</details>
+							</li>
+					</ul>
+				</details>
+				<details class="category" open>
+					<summary>
+						<h2>Equipment</h2>
+					</summary>
+
+					<ul>
+							<li>
+									<details >
+									<summary><a href="../../equipment/1_overview/">1_Overview</a></summary>
+
+									<ul>
+
+
+
+									</ul>
+									</details>
+							</li>
 					</ul>
 				</details>
 				<details class="category" open>
@@ -97,29 +144,34 @@ RegisterNetworkString												</a>
 					<ul>
 							<li>
 									<details >
-									<summary><a href="../../terminals/networkstrings/">NetworkStrings</a></summary>
+									<summary><a href="../../terminals/1_overview/">1_Overview</a></summary>
 
 									<ul>
 
 
 										<li>
-										<a href="../../terminals/networkstrings/#CharCombineDataStruct">
+										<a href="../../terminals/1_overview/#TWOdsfsdfsd">
 										<span class="realm shared"></span>
-CharCombineDataStruct												</a>
+TWOdsfsdfsd												</a>
 											<p><span class="displayKind tables">Table</span></p>
 										</li>
 										<li>
-										<a href="../../terminals/networkstrings/#CharCombineDataStructNew">
+										<a href="../../terminals/1_overview/#XAD">
 										<span class="realm shared"></span>
-CharCombineDataStructNew												</a>
+XAD												</a>
 											<p><span class="displayKind tables">Table</span></p>
 										</li>
-										<li>
-										<a href="../../terminals/networkstrings/#CombineDataEntryStruct">
-										<span class="realm null"></span>
-CombineDataEntryStruct												</a>
-											<p><span class="displayKind tables">Table</span></p>
-										</li>
+
+									</ul>
+									</details>
+							</li>
+							<li>
+									<details >
+									<summary><a href="../../terminals/networkstrings/">NetworkStrings</a></summary>
+
+									<ul>
+
+
 										<li>
 										<a href="../../terminals/networkstrings/#ixTerminal_SendCitizen">
 										<span class="realm shared"></span>
@@ -138,21 +190,27 @@ ixTerminal_Transaction												</a>
 							</li>
 							<li>
 									<details >
-									<summary><a href="../../terminals/terminal/">Terminal</a></summary>
+									<summary><a href="../../terminals/structs/">Structs</a></summary>
 
 									<ul>
 
 
 										<li>
-										<a href="../../terminals/terminal/#TWOdsfsdfsd">
+										<a href="../../terminals/structs/#CharCombineDataStruct">
 										<span class="realm shared"></span>
-TWOdsfsdfsd												</a>
+CharCombineDataStruct												</a>
 											<p><span class="displayKind tables">Table</span></p>
 										</li>
 										<li>
-										<a href="../../terminals/terminal/#XAD">
+										<a href="../../terminals/structs/#CharCombineDataStructNew">
 										<span class="realm shared"></span>
-XAD												</a>
+CharCombineDataStructNew												</a>
+											<p><span class="displayKind tables">Table</span></p>
+										</li>
+										<li>
+										<a href="../../terminals/structs/#CombineDataEntryStruct">
+										<span class="realm null"></span>
+CombineDataEntryStruct												</a>
 											<p><span class="displayKind tables">Table</span></p>
 										</li>
 
@@ -209,23 +267,6 @@ Set												</a>
 					</summary>
 
 					<ul>
-							<li>
-									<details >
-									<summary><a href="../../topics and objects/safenet.errlev/">SafeNet.ERRLEV</a></summary>
-
-									<ul>
-
-
-										<li>
-										<a href="../../topics and objects/safenet.errlev/#ERRLEV">
-										<span class="realm shared"></span>
-ERRLEV												</a>
-											<p><span class="displayKind tables">Table</span></p>
-										</li>
-
-									</ul>
-									</details>
-							</li>
 							<li>
 									<details >
 									<summary><a href="../../topics and objects/safenet.wormhole/">SafeNet.Wormhole</a></summary>
@@ -478,64 +519,12 @@ SetValidatorKey												</a>
 
 <header class="module">
 	<h1>SafeNet</h1>
-	<h2>SafeNet is a utility designed to secure Network Messaages and ensure data integrity.</h2>
+	<h2>The main namespace for SafeNet.</h2>
 </header>
 
-<p>SafeNet is a "middleman" library, if SafeNet is active, then it's going to insert itself between network calls.
-This means that you should only have one implementation of SafeNet active, SafeNet will <em>NOT</em> load twice, so your executions
-should not be in this file.</p>
+<p>
 
-<p>Network messages are built upon using Blocks which are just fields in a table with a fancy name.
-Depending on the importance of your SafeNet message, you might want to use different, or multiple blocks of security.
-All of the blocks of security are interchangable with one another.</p>
-
-<h2>Validation</h2>
-<p>The first line of defense for SafeNet is a basic Server Client key pair.
-The client will periodically be sent a key with a seed you specify. The client will append all Network Messages registered in SafeNet with a key.
-If they cannot provide a valid key, their net message will be rejected.</p>
-
-<h2>Wormholes</h2>
-<p>Wormholes are a concept employed in SafeNet that allow you to basically open a mock 'port' to the client.
-If you can't reliably secure your network message, you should at least be able to reliably secure when it should be able to execute.
-Wormholes can be opened and closed at will.
-The Client cannot interact with wormholes.
-The Client will be sent a unique key when a SafeNet.Wormhole is opened to them, generated by your SafeNetSeed.
-They MUST reply with this key, or their net message will be rejected.</p>
-
-<h2>Type Parameters</h2>
-<p>It typically isn't enough for network messages to be EXPLICITLY typed as they are. People will still input invalid values,
-or do silly stuff.
-Developers will also occasionally screw up parameters too.
-You can add a "Network Parameter" to a SafeNet object, which will allow you to have strict, exclusive parameters,
-that SafeNet can look at.</p>
-
-<p>Remember, never add the Player who is sending the message as a parameter.</p>
-
-<p>SafeNet, like the Networking Library, requires your Type Parameters to be defined in the same order they are written.</p>
-
-<h2>Execution Rules</h2>
-<p>SafeNet allows you to manually whitelist groups, SteamIDs, or another variable, that must exist within the parameters provided.
-You can pass SafeNet a function when adding an ExecutionRule.</p>
-
-<h2>Exploit catching</h2>
-<p>SafeNet will automatically seek out common mistakes and exploits, and provided <code>NetExploitsKillNetworkMessage</code> is set to true, will kill the network message.</p>
-
-<h2>Sequential Execution</h2>
-<p>SafeNet is set up in a way similar to the network library, where each execution is ordered.</p>
-
-
-<h2>SafeNet UI</h2>
-<p>The SafeNet UI is designed to show you what and where, and when network messages are executed.
-The SafeNet UI will also notify you if any Network messages have been rejected; and will rat on whoever failed it, and why.
-From the SafeNet UI you can also configure a variety of options, such as auto-kick, auto-ban, which messages halt what, and so on.
-Of course, those variables can also be set by the Developer, but the SafeNet UI is considered as the final Arbiter of functionality.</p>
-
-<h2>Library Components</h2>
-<p>This library contains the following subjects, separated for ease of reading:</p>
-
-<p><a href="../../topics and objects/safenet.wormhole/#">SafeNet.Wormhole</a></p>
-
-<p><a href="../../classes/safenet.object/#">SafeNet.Object</a></p>
+</p>
 
 	<h1 class="title">Functions</h1>
 
@@ -567,7 +556,7 @@ Of course, those variables can also be set by the Developer, but the SafeNet UI 
 
 
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L153">View source &raquo;</a>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L156">View source &raquo;</a>
 
 					<p>Writes out an Error string, appending a message for specific error types.</p>
 			</header>
@@ -646,7 +635,7 @@ Of course, those variables can also be set by the Developer, but the SafeNet UI 
 
 
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L145">View source &raquo;</a>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L148">View source &raquo;</a>
 
 					<p>Returns a <a href="../../classes/safenet.object/#">SafeNet.Object</a> object if one exists for the given network string.
  This will generate an error, and kill the stack if it doesn't exist.</p>
@@ -727,7 +716,7 @@ Of course, those variables can also be set by the Developer, but the SafeNet UI 
 
 
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L135">View source &raquo;</a>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/safenet.lua#L138">View source &raquo;</a>
 
 					<p>Registers a NetworkString to the SafeNet Registry, only network messages in the SafeNet registry will be manipulated
  by SafeNet.</p>
