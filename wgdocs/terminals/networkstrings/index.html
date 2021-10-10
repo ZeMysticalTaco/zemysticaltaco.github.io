@@ -21,8 +21,8 @@
 
 <nav>
 	<header>
+			<center><img src="/header.png" width=80% height=100></img></center>
 			<h1><a href="../../">WG Documentation</a></h1>
-			<img src="./header.png" width=80% height=100></img>
 		<input id="search" type="search" autocomplete="off" placeholder="Search..." />
 	</header>
 
@@ -103,15 +103,33 @@ RegisterNetworkString												</a>
 
 
 										<li>
-										<a href="../../terminals/networkstrings/#Dab">
+										<a href="../../terminals/networkstrings/#CharCombineDataStruct">
 										<span class="realm shared"></span>
-Dab												</a>
+CharCombineDataStruct												</a>
+											<p><span class="displayKind tables">Table</span></p>
+										</li>
+										<li>
+										<a href="../../terminals/networkstrings/#CharCombineDataStructNew">
+										<span class="realm shared"></span>
+CharCombineDataStructNew												</a>
+											<p><span class="displayKind tables">Table</span></p>
+										</li>
+										<li>
+										<a href="../../terminals/networkstrings/#CombineDataEntryStruct">
+										<span class="realm null"></span>
+CombineDataEntryStruct												</a>
+											<p><span class="displayKind tables">Table</span></p>
+										</li>
+										<li>
+										<a href="../../terminals/networkstrings/#ixTerminal_SendCitizen">
+										<span class="realm shared"></span>
+ixTerminal_SendCitizen												</a>
 											<p><span class="displayKind nwstrings">Network String</span></p>
 										</li>
 										<li>
-										<a href="../../terminals/networkstrings/#Two">
+										<a href="../../terminals/networkstrings/#ixTerminal_Transaction">
 										<span class="realm shared"></span>
-Two												</a>
+ixTerminal_Transaction												</a>
 											<p><span class="displayKind nwstrings">Network String</span></p>
 										</li>
 
@@ -471,8 +489,8 @@ SetValidatorKey												</a>
 
 		<section class="method">
 			<header>
-				<a class="anchor" id="Dab">
-					<h1 class="displayType nwstrings"><span class="realm shared"></span></span>Dab
+				<a class="anchor" id="ixTerminal_SendCitizen">
+					<h1 class="displayType nwstrings"><span class="realm shared"></span></span>ixTerminal_SendCitizen
 						<div class="notice displayType nwstrings">
 							<div class="alternatetitle displayType nwstrings">
 								Network String
@@ -490,9 +508,10 @@ SetValidatorKey												</a>
 
 
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L27">View source &raquo;</a>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L19">View source &raquo;</a>
 
-					<p>Network String</p>
+					<p>Sends a specific Character
+ Deprecated, <code>WriteTable</code> is for posers.</p>
 			</header>
 
 
@@ -502,11 +521,21 @@ SetValidatorKey												</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter"><span class="typeHeader">var</span>dab</span>
+								<span class="tag parameter"><span class="typeHeader">var</span>characterData</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											table
+										</span>
+
+									</span>
 
 
-
-								<p> Dos</p>
+								<p> The Character Data to be sent to the player, see: <a href="../../terminals/networkstrings/#CharCombineDataStruct">CharCombineDataStruct</a></p>
 							</li>
 					</ul>
 
@@ -515,8 +544,8 @@ SetValidatorKey												</a>
 		</section>
 		<section class="method">
 			<header>
-				<a class="anchor" id="Two">
-					<h1 class="displayType nwstrings"><span class="realm shared"></span></span>Two
+				<a class="anchor" id="ixTerminal_Transaction">
+					<h1 class="displayType nwstrings"><span class="realm shared"></span></span>ixTerminal_Transaction
 						<div class="notice displayType nwstrings">
 							<div class="alternatetitle displayType nwstrings">
 								Network String
@@ -534,9 +563,9 @@ SetValidatorKey												</a>
 
 
 
-					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L20">View source &raquo;</a>
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L28">View source &raquo;</a>
 
-					<p>Network String</p>
+					<p>The primary info exchange for terminal transactions.</p>
 			</header>
 
 
@@ -546,7 +575,28 @@ SetValidatorKey												</a>
 					<ul>
 
 							<li>
-								<span class="tag parameter"><span class="typeHeader">var</span>x</span>
+								<span class="tag parameter"><span class="typeHeader">var</span>stockDecrement</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											boolean
+										</span>
+
+									</span>
+
+
+								<p> Whether or not the stock is going up, or down.</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>itemID</span>
 
 									<span class="tag">
 
@@ -560,7 +610,427 @@ SetValidatorKey												</a>
 									</span>
 
 
-								<p> dab Dos</p>
+								<p> The item's unique ID.</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+	<h1 class="title">Tables</h1>
+
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharCombineDataStruct">
+					<h1 class="displayType tables"><span class="realm shared"></span></span>CharCombineDataStruct
+						<div class="notice displayType tables">
+							<div class="alternatetitle displayType tables">
+								Table / Enumeration
+							</div>
+							<div class="unimplemented text displayType tables">
+									<!-- You can put text here. -->
+
+							</div>
+						</div>
+					</h1>
+				</a>
+
+
+
+
+
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L348">View source &raquo;</a>
+
+					<p>The primary structure for sending character data to the client over the network.
+ Deprecated, use <a href="../../terminals/networkstrings/#CharCombineDataStructNew">CharCombineDataStructNew</a></p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>dab</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p> X</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CharCombineDataStructNew">
+					<h1 class="displayType tables"><span class="realm shared"></span></span>CharCombineDataStructNew
+						<div class="notice displayType tables">
+							<div class="alternatetitle displayType tables">
+								Table / Enumeration
+							</div>
+							<div class="unimplemented text displayType tables">
+									<!-- You can put text here. -->
+
+							</div>
+						</div>
+					</h1>
+				</a>
+
+
+
+
+
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L364">View source &raquo;</a>
+
+					<p>The primary structure for sending character data to the client over the network.</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>hairColor</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>model</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>name</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>birthday</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>cid</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>gender</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											string
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>age</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>weight</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>height</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>skin</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>charID</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
+							</li>
+					</ul>
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>CombineData</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											table
+										</span>
+
+									</span>
+
+
+								<p> a table containing <a href="../../terminals/networkstrings/#CombineDataEntryStruct">CombineDataEntryStruct</a>(s)</p>
+							</li>
+					</ul>
+
+
+
+		</section>
+		<section class="method">
+			<header>
+				<a class="anchor" id="CombineDataEntryStruct">
+					<h1 class="displayType tables"><span class="realm null"></span></span>CombineDataEntryStruct
+						<div class="notice displayType tables">
+							<div class="alternatetitle displayType tables">
+								Table / Enumeration
+							</div>
+							<div class="unimplemented text displayType tables">
+									<!-- You can put text here. -->
+
+							</div>
+						</div>
+					</h1>
+				</a>
+
+
+
+
+
+
+					<a class="reference" href="https://github.com/wg-gh-dev/hlrp/tree/master/home/runner/work/hlrp/hlrp/hlrp/plugins/wwg_terminal/sv_networking.lua#L367">View source &raquo;</a>
+
+					<p>Combine</p>
+			</header>
+
+
+					<h3>Fields</h3>
+
+
+					<ul>
+
+							<li>
+								<span class="tag parameter"><span class="typeHeader">var</span>d</span>
+
+									<span class="tag">
+
+										<span class="type">
+											<span class="typeHeader">
+												type
+											</span>
+											number
+										</span>
+
+									</span>
+
+
+								<p>
+
+</p>
 							</li>
 					</ul>
 
