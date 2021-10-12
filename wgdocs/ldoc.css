@@ -449,6 +449,7 @@ a.reference {
 
 	margin-top: var(--padding-tiny);
 	border: 2px solid var(--color-notice-background);
+	display: inline-flex;
 }
 
 .notice.error {
@@ -458,6 +459,10 @@ a.reference {
 
 .notice.unimplemented {
 	--color-notice-background: rgb(194, 192, 52);
+}
+
+.notice.PLUGIN {
+	--color-notice-background: rgb(121, 194, 52);
 }
 
 .notice.rough {
@@ -512,30 +517,32 @@ a.reference {
 .notice.displayType {
 	--color-notice-background: rgb(203, 224, 112);
 	--color-notice-text: rgb(167, 104, 37);
-	background-color: rgb(40,40,40);
+	/* background-color: rgb(40,40,40); */
 	border: 0;
 	margin-left: auto;
 	margin-right: 32px;
 }
 
 .notice .alternatetitle.displayType {
-	background-color: var(--displayKind-default-color);
+	/* background-color: var(--displayKind-default-color); */
 	color:whitesmoke;
 	font-size: 12px;
 	padding: 8px;
-	opacity: .8;
-
+	opacity: inherit;
+	height: max-content;
 }
 
-.notice .alternatetitle.displayType.nwstrings {
+
+
+/* .methodDisplayHint.nwstrings {
 	background-color: var(--displayKind-nwstrings-color);
 }
-.notice .alternatetitle.displayType.tables {
+.methodDisplayHint.tables {
 	background-color: var(--displayKind-tables-color);
 }
-.notice .alternatetitle.displayType.functions {
+.methodDisplayHint.functions {
 	background-color: var(--displayKind-functions-color);
-}
+} */
 
 .notice .roughText {
 	--color-notice-background: red;
@@ -551,6 +558,38 @@ a.reference {
 
 	margin: 0 !important;
 	padding: var(--padding-tiny);
+}
+
+.methodDisplayHint {
+	margin-right: 32px;
+}
+
+.methodDisplayHint.hoverBody {
+	margin: 0;
+}
+
+.methodDisplayHint.hoverBody p {
+	margin: 0;
+}
+
+.methodDisplayHint.hoverable {
+	font-size: 0;
+	transition: .2s;
+	display: block;
+}
+.methodDisplayHint.hoverable:hover {
+	font-size: 12px;
+	transition: .2s;
+	scale: 1.1;
+	opacity: 100;
+	/* margin: 16px; */
+	width: 450px;
+	transition-delay: .05s;
+	font-weight: 100;
+	/* padding: 16px; */
+	background-color: rgb(40,40,40);
+	margin-right: 48px;
+	box-shadow: rgba(0,0,0,.4) 2px 2px;
 }
 
 /* function/table */
