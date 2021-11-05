@@ -2,16 +2,13 @@
 
 <html>
 	<head>
-		<title>Development Standards - WG Documentation</title>
+		<title>Overview - WG Documentation</title>
 
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Development Standards - WG Documentation" />
+		<meta property="og:title" content="Overview - WG Documentation" />
 		<meta property="og:site_name" content="Helix Documentation" />
 
-			<meta property="og:description" content="
-The  of Werwolf Gaming servers is summed up by &quot;the best that you can possibly do&quot;. We recognize that not everyone will be able to achieve an easy result.
-
-*Code that is at **COMMIT REFERENCE HERE** or September 2021 may not follow these conventions, if ..." />
+			<meta property="og:description" content="A logging system that serves as sort of an in-game tracker for workshift activities." />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro" />
 		<link rel="stylesheet" href="../../ldoc.css" />
@@ -77,7 +74,7 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 
 					<ul>
 						<li>
-								<details >
+								<details open>
         <summary><a href="../../safenet/overview/">Overview</a></summary><ul>
 
 
@@ -113,7 +110,7 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 
 					<ul>
 						<li>
-								<details >
+								<details open>
         <summary><a href="../../equipment/overview/">Overview</a></summary><ul>
 
 
@@ -131,7 +128,7 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 
 					<ul>
 						<li>
-								<details >
+								<details open>
         <summary><a href="../../medical system/overview/">Overview</a></summary><ul>
 
 
@@ -203,7 +200,7 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 
 					<ul>
 						<li>
-								<details >
+								<details open>
         <summary><a href="../../terminals/overview/">Overview</a></summary><ul>
 
 							<li><a href="../../terminals/overview/#TWOdsfsdfsd"><span class="realm shared"></span>TWOdsfsdfsd</a><p><span class="displayKind tables">Table</span></p></li><li><a href="../../terminals/overview/#XAD"><span class="realm shared"></span>XAD</a><p><span class="displayKind tables">Table</span></p></li>
@@ -239,7 +236,7 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 
 					<ul>
 						<li>
-								<details >
+								<details open>
         <summary><a href="../../workshift logger/overview/">Overview</a></summary><ul>
 
 
@@ -354,7 +351,7 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 
 							</li>
 							<li>
-									<details open>
+									<details >
         <summary><a href="../../manual/development-standards/">Development Standards</a></summary><ul>
 
 
@@ -390,41 +387,53 @@ The  of Werwolf Gaming servers is summed up by &quot;the best that you can possi
 			<article>
 					<div class="wrapper">
 
-<h1>Development Standards</h1>
-<p>The Development Standards of Werwolf Gaming servers is summed up by "the best that you can possibly do". We recognize that not everyone will be able to achieve an easy result.</p>
+<header class="module">
+	<h1>Overview</h1>
+	<h2>A logging system that serves as sort of an in-game tracker for workshift activities.</h2>
+</header>
 
-<p><em>Code that is at <strong>COMMIT REFERENCE HERE</strong> or September 2021 may not follow these conventions, if you see code that does not follow it: You can convert it to these conventions as long as it doesn't break anything. It isn't required, but would be very appreciated.</em></p>
+<p>
 
-<h1>Objects</h1>
 
-<p><a name="Actual_Objects"></a></p>
-<h2>Actual Objects</h2>
-<p>Helix comes with the <code>middleclass</code> library, for objects that need to be instanced, we recommend using this library, Lua isn't really a good "Object Oriented" language, with the closest thing we have being MetaTables. The Middleclass library makes creating objects and instances of objects easy, and has inheritance.</p>
+<div class="topic">
 
-<p>See: {@middle-classes|Middle Classes}</p>
+<h2>Sections</h2>
+The <code>Workshift Logger</code> is grouped into two separate parts;
+<h3>ix.shift</h3>
+<p>The utility library for generating and manipulating <a href="../../workshift logger/workshiftlog/#">WorkshiftLog</a> objects.</p>
 
-<p><a name="Panel_Objects"></a></p>
-<h2>Panel Objects</h2>
-<p>Panels should be Panel CLASSES, the only reason you should offshoot or dynamically extend (that is, to alter static variables or functions of the panel at runtime) and not extend by class, is if it's one line or very simplistic. Don't call <code>DEFINE_BASECLASS</code> and do a <code>BaseClass</code> function when not working with a Panel object, it looks ugly.</p>
+<h3>WorkshiftLog</h3>
 
-<p>Non-purpose built panels (ie. buttons) should be able to function individually(i can open a dpanel and do panel:Add(class)) unless they have functionality that needs to be directly tied to the panel.</p>
-<h1>The Stack</h1>
-<p>Avoid unnecessary scope pyramids, if you're 6 scopes deep and all you're doing is Derma Panels, you're are most likely doing it wrong.</p>
+<p>The main workshift log object, which handles most of the functionality itself.</p>
 
-<p><a name="Conditionals"></a></p>
-<h2>Conditionals</h2>
-<p>Conditionals should catch all circumstances they possibly can, things shouldn't ever be left to chance. Conditionals should be <code>positive bias</code>, meaning that most if statements should follow an <code>if (x) then</code> philosophy and not a <code>if not (x) then</code> philosophy, though this is difficult to follow, and isn't required.</p>
+<p>
+WorkshiftLog objects are your main slave object, when created, a new entry into the database is created using the parameters
+you summoned the object with.
+</p>
+<p>
+Get/Set operations use a singular function to handle database operations, which is why you should
+use Get/Set methods like GetText and SetText, instead of referencing their fields directly.
+<br>
+See:
+<h4> Manipulating Fields</h4>
+<ul>
+<li><a href="../../workshift logger/workshiftlog/#GetVar">WorkshiftLog:GetVar</a> / <a href="../../workshift logger/workshiftlog/#SetVar">WorkshiftLog:SetVar</a>
+<li><a href="../../workshift logger/workshiftlog/#GetText">WorkshiftLog:GetText</a> / <a href="../../workshift logger/workshiftlog/#SetText">WorkshiftLog:SetText</a>
+<li>
+</ul>
+<h4>Manipulating the Creator</h4>
+<ul>
+<li> <a href="../../workshift logger/workshiftlog/#GetCreator">WorkshiftLog:GetCreator</a>
+<li> <a href="../../workshift logger/workshiftlog/#GetCreatorName">WorkshiftLog:GetCreatorName</a>
+<li> <a href="../../workshift logger/workshiftlog/#GetCreatorCharacter">WorkshiftLog:GetCreatorCharacter</a>
+<li> <a href="../../workshift logger/workshiftlog/#GetCreatorCharacterID">WorkshiftLog:GetCreatorCharacterID</a></li>
 
-<p><a name="Pyramids"></a></p>
-<h2>Pyramids</h2>
-<p>Scoping is difficult, deciding where things should go for the best possible recognition is difficult. Scope pyramids should be limited to 5 scopes deep or less.</p>
+</li>
+</ul>
+</p>
+</div>
 
-<h3>Function Pyramids</h3>
-<p>Functions should not be declared in functions. Excepting <code>local function</code>s.</p>
-
-<h1>Prototyping</h1>
-<p>Until code is committed to master, ALL CODE unless otherwise specified is to be considered prototype code, and is not production ready. Do not re-use other people's code that is prototyped.</p>
-
+</p>
 
 
 					</div>
